@@ -1,26 +1,21 @@
 #include <stdio.h>
-
-void update(int *a, int *b)
-{
-    int sum = *a + *b;
-    int diff = *a - *b;
-
-    if (diff < 0)
-        diff = -diff;
-
-    *a = sum;
-    *b = diff;
-}
+#include <stdlib.h>
 
 int main()
 {
-    int a, b;
+    int n;
+    scanf("%d", &n);
 
-    scanf("%d %d", &a, &b);
+    int arr[n];
+    int sum = 0;
 
-    update(&a, &b);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
 
-    printf("%d\n%d", a, b);
+    printf("%d", sum);
 
     return 0;
 }
