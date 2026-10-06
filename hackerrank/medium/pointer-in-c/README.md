@@ -1,4 +1,4 @@
-# Pointers in C
+# 1D Arrays in C
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -50,32 +50,27 @@ Note: Input/ouput will be automatically handled. You only have to complete the f
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-06T07:44:43.129Z  
+**Submitted:** 2026-10-06T08:00:21.583Z  
 
 ```c
 #include <stdio.h>
-
-void update(int *a, int *b)
-{
-    int sum = *a + *b;
-    int diff = *a - *b;
-
-    if (diff < 0)
-        diff = -diff;
-
-    *a = sum;
-    *b = diff;
-}
+#include <stdlib.h>
 
 int main()
 {
-    int a, b;
+    int n;
+    scanf("%d", &n);
 
-    scanf("%d %d", &a, &b);
+    int arr[n];
+    int sum = 0;
 
-    update(&a, &b);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
 
-    printf("%d\n%d", a, b);
+    printf("%d", sum);
 
     return 0;
 }
